@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prompt-shield-guard"
+version = "0.1.0"
+description = "LLM Prompt Injection Defender & Security Guardrail for Production AI Applications"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Mohamed Shaban (محمد شعبان العتماني)", email = "msalatmani@gmail.com" }
+]
+maintainers = [
+    { name = "Nesronix Community", email = "dev@nesronix.org" }
+]
+keywords = [
+    "ai", "python", "nesronix", "robovai", "enterprise", "machine-learning",
+    "prompt shield guard"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Operating System :: OS Independent",
+    "Typing :: Typed"
+]
+dependencies = [
+    "pydantic>=2.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0", "ruff>=0.1.0", "mypy>=1.0.0"
+]
+
+[project.urls]
+"Homepage" = "https://nesronix.org"
+"Documentation" = "https://github.com/Nesronix/prompt-shield-guard#readme"
+"Source" = "https://github.com/Nesronix/prompt-shield-guard"
+"Tracker" = "https://github.com/Nesronix/prompt-shield-guard/issues"
+"Author Portfolio" = "https://msalatmani.org"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["py.typed"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
